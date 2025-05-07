@@ -19,6 +19,11 @@
     font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+main {
+    flex: 1;
+    padding: 2rem 0 2rem 260px; /* leave room for sidebar */
+}
+
 body {
     background-color: var(--background);
     color: var(--on-background);
@@ -329,4 +334,46 @@ input[type="text"]::placeholder {
 /* Hide the autocomplete container when empty */
 .autocomplete-container:empty {
     display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    width: 240px;
+    height: calc(100% - 80px);
+    background-color: var(--surface);
+    color: var(--on-surface);
+    border-right: 1px solid var(--surface-hover);
+    padding: 1.5rem 1rem;
+    overflow-y: auto;
+    z-index: -1;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+#history-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#history-list li {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    background-color: var(--surface-hover);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+#history-list li:hover {
+    background-color: var(--primary-variant);
+    color: var(--on-primary);
 }

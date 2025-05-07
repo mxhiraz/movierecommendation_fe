@@ -128,3 +128,22 @@ document.addEventListener("DOMContentLoaded", () => {
         ).innerText = `Recommended movies similar to "${searchTerm}":`;
     }
 });
+
+document.getElementById('search-form').addEventListener('submit', function (e) {
+    const input = document.getElementById('movie-search').value.trim();
+    if (input) {
+      addToHistory(input);
+    }
+  });
+  
+  function addToHistory(movieTitle) {
+    const list = document.getElementById('history-list');
+    const item = document.createElement('li');
+    item.textContent = movieTitle;
+    item.addEventListener('click', () => {
+      document.getElementById('movie-search').value = movieTitle;
+      document.getElementById('search-form').dispatchEvent(new Event('submit'));
+    });
+    list.prepend(item);
+  }
+  
