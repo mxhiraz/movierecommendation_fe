@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CineMatch - Movie Recommendations</title>
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="/" style="color: inherit; text-decoration: none">
+            <span>CineMatch</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="search-container">
+        <h1 class="search-title">Discover Your Next Favorite Movie</h1>
+        <p class="search-subtitle">
+          Enter a movie you love, and we'll recommend similar films you might
+          enjoy.
+        </p>
+        <form class="search-form" id="search-form">
+          <input
+            type="text"
+            class="search-input"
+            id="movie-search"
+            placeholder="Enter a movie title..."
+            required
+            autocomplete="on"
+          />
+          <button type="submit" class="search-button">Find Movies</button>
+        </form>
+      </div>
+
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Finding the perfect matches for you...</p>
+      </div>
+
+      <div class="error-message" id="error-message">
+        <p>
+          Sorry, we couldn't find any recommendations for that movie. Please try
+          another title.
+        </p>
+      </div>
+
+      <div class="results-container" id="results-container">
+        <h2 class="results-title">Recommended movies based on your search:</h2>
+        <div class="movie-grid" id="movie-grid"></div>
+      </div>
+      <div class="recommend-container" id="recommend-container">
+        <h2 class="recommend-title">Recommended movies:</h2>
+        <div class="movie-grid-mp" id="movie-grid-mp"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 CineMatch. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>
